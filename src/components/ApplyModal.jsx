@@ -19,6 +19,7 @@ export default function ApplyModal({ open, onClose, job, user }) {
         uuid: user.uuid,
         jobId: job.id,
         candidateId: user.candidateId,
+        applicationId: user.applicationId, // <-- Agregado aquí
         repoUrl,
       });
       setSuccess("¡Postulación enviada con éxito!");
@@ -53,6 +54,9 @@ export default function ApplyModal({ open, onClose, job, user }) {
           </div>
           <div>
             <strong>Candidate ID:</strong> {user.candidateId}
+          </div>
+          <div>
+            <strong>Application ID:</strong> {user.applicationId}
           </div>
         </div>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4">
